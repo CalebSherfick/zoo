@@ -1,29 +1,34 @@
+console.log('start')
+
+
+
+
 import Alligator from "./models/alligator.js";
-import Bear from "./models/bear";
-import Crab from "./models/crab";
-import Donkey from "./models/donkey";
-import Elephant from "./models/elephant";
-import Flamingo from "./models/flamingo";
-import Gorilla from "./models/gorilla";
-import Horse from "./models/horse";
-import Iguana from "./models/iguana";
-import Jaguar from "./models/jaguar";
-import Koala from "./models/koala";
-import Lynx from "./models/lynx";
-import Meerkat from "./models/meerkat";
-import Narwhal from "./models/narwhal";
-import Ostrich from "./models/ostrich";
-import Penguin from "./models/penguin";
-import Quail from "./models/quail";
-import Raccoon from "./models/raccoon";
-import Snake from "./models/snake";
-import Turtle from "./models/turtle";
-import Urchin from "./models/urchin";
-import Vulture from "./models/vulture";
-import Whale from "./models/whale";
-import Xerux from "./models/xerus";
-import Yak from "./models/yak";
-import Zebra from "./models/zebra"
+import Bear from "./models/bear.js";
+import Crab from "./models/crab.js";
+import Donkey from "./models/donkey.js";
+import Elephant from "./models/elephant.js";
+import Flamingo from "./models/flamingo.js";
+import Gorilla from "./models/gorilla.js";
+import Horse from "./models/horse.js";
+import Iguana from "./models/iguana.js";
+import Jaguar from "./models/jaguar.js";
+import Koala from "./models/koala.js";
+import Lynx from "./models/lynx.js";
+import Meerkat from "./models/meerkat.js";
+import Narwhal from "./models/narwhal.js";
+import Ostrich from "./models/ostrich.js";
+import Penguin from "./models/penguin.js";
+import Quail from "./models/quail.js";
+import Raccoon from "./models/raccoon.js";
+import Snake from "./models/snake.js";
+import Turtle from "./models/turtle.js";
+import Urchin from "./models/urchin.js";
+import Vulture from "./models/vulture.js";
+import Whale from "./models/whale.js";
+import Xerux from "./models/xerus.js";
+import Yak from "./models/yak.js";
+import Zebra from "./models/zebra.js"
 
 
 let alex = new Alligator('Alex', 4, true)
@@ -49,7 +54,28 @@ let trevor = new Turtle('Trevor', 2, true)
 let uni = new Urchin('Uni', 2, true)
 let vivian = new Vulture('Vivian', 2, true)
 let wanda = new Whale('Wanda', 2, true)
-let xavier = new Xerus('Xavier', 2, true)
+let xavier = new Xerux('Xavier', 2, true)
 let yanny = new Yak('Yanny', 2, true)
 let zack = new Zebra('Zack', 2, true)
 
+let animals = [alex, barry, chris, darryl, ellie, frank, george, harry, izzy, james, karen, laurel, mary, narth, olly, patty, quinn, rich, sally, trevor, uni, vivian, wanda, xavier, yanny, zack]
+
+function isTail(animal) {
+  if (animal.tail == true) {
+    return "have a tail"
+  } else {
+    return "does not have a tail"
+  }
+}
+
+
+function draw(arr) {
+  let template = ''
+  arr.forEach(animal => {
+    template += `<li> ${animal.name} the ${animal.constructor.name} has ${animal.legs} legs and ${isTail(animal)}.</li>`
+  })
+  document.getElementById('animals').innerHTML = template
+}
+draw(animals)
+
+console.log('end')
