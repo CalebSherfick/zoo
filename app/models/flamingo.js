@@ -1,4 +1,4 @@
-export default class Alligator {
+export default class Flamingo {
   constructor(name, legs, tail) {
     this.name = name
     this.legs = legs
